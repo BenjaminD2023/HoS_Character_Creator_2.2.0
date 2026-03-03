@@ -1,9 +1,7 @@
 import { useCharacter } from '../context/CharacterContext';
-import { useNavigate } from 'react-router-dom';
 
 export function Header() {
   const { character, resetCharacter } = useCharacter();
-  const navigate = useNavigate();
 
   return (
     <header className="bg-gray-900 border-b border-gray-700 sticky top-0 z-10">
@@ -27,7 +25,6 @@ export function Header() {
               onClick={() => {
                 if (confirm('Are you sure you want to reset all data?')) {
                   resetCharacter();
-                  navigate('/');
                 }
               }}
               className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm"
