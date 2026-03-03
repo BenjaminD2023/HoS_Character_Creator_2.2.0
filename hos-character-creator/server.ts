@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { SKILL_DATA } from './src/data/skills';
+import { SKILL_DATA } from './src/data/skills.ts';
 import type { Skill } from './src/types/character';
 
 const app = express();
