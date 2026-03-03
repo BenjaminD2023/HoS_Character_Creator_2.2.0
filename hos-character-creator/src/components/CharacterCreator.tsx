@@ -11,11 +11,11 @@ export function CharacterCreator() {
   const [activeTab, setActiveTab] = useState<'basics' | 'stats' | 'class' | 'skills' | 'card'>('basics');
 
   const tabs = [
-    { id: 'basics' as const, label: 'Basics', icon: '📝' },
-    { id: 'stats' as const, label: 'Stats', icon: '🎲' },
-    { id: 'class' as const, label: 'Class & XP', icon: '⚔️' },
-    { id: 'skills' as const, label: 'Skills', icon: '✨' },
-    { id: 'card' as const, label: 'Card', icon: '🃏' },
+    { id: 'basics' as const, label: 'Basics', icon: '[B]' },
+    { id: 'stats' as const, label: 'Stats', icon: '[S]' },
+    { id: 'class' as const, label: 'Class & XP', icon: '[C]' },
+    { id: 'skills' as const, label: 'Skills', icon: '[K]' },
+    { id: 'card' as const, label: 'Card', icon: '[D]' },
   ];
 
   return (
@@ -38,7 +38,7 @@ export function CharacterCreator() {
                       : 'text-gray-400 hover:text-white hover:bg-gray-800'
                   }`}
                 >
-                  <span>{tab.icon}</span>
+                  <span className="text-xs font-mono">{tab.icon}</span>
                   <span>{tab.label}</span>
                 </button>
               ))}
