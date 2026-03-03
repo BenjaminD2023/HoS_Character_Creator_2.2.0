@@ -9,6 +9,22 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
+// 根路径响应
+app.get('/', (req, res) => {
+  res.json({
+    message: 'House of Shadows API',
+    version: '1.0.0',
+    endpoints: {
+      skills: '/api/skills',
+      skillsByClass: '/api/skills/class/:className',
+      skillById: '/api/skills/:skillId',
+      customSkill: '/api/skills/custom (POST)',
+      characters: '/api/characters (POST)',
+      characterById: '/api/characters/:characterId'
+    }
+  });
+});
+
 // 获取所有技能列表
 app.get('/api/skills', (req, res) => {
   res.json(SKILL_DATA);
